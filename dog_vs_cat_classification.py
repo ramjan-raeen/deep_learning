@@ -201,11 +201,10 @@ model.summary()
 
 It's time I train my network.
 
-Since my batches are coming from a generator (`ImageDataGenerator`), I'll use `fit_generator` instead of `fit`.
 """
 
 epochs=100
-history = model.fit_generator(
+history = model.fit(
       train_data_gen,
       steps_per_epoch=int(np.ceil(total_train / float(BATCH_SIZE))),
       epochs=epochs,
